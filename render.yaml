@@ -6,8 +6,10 @@ services:
     startCommand: node server.js
     envVars:
       - key: MONGODB_URI
-        sync: false
+        fromDatabase:
+          name: flop11-db
+          property: connectionString
       - key: JWT_SECRET
         generateValue: true
-      - key: NODE_ENV
-        value: production 
+      - key: PORT
+        value: 5000 

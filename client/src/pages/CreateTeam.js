@@ -18,11 +18,14 @@ import {
   InputLabel,
   Checkbox,
   FormControlLabel,
-  Radio,
-  RadioGroup
+  IconButton,
+  Avatar
 } from '@mui/material';
 import axios from 'axios';
 import { API_URL } from '../config';
+import { Delete as DeleteIcon } from '@mui/icons-material';
+import { useAuth } from '../contexts/AuthContext';
+import { createTeam as createTeamService, getPlayers as getPlayersService } from '../services/api';
 
 const CreateTeam = () => {
   const { matchId } = useParams();
