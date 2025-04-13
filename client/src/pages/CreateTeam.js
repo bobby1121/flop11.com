@@ -36,7 +36,7 @@ const CreateTeam = () => {
     const fetchPlayers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/players', {
+        const res = await axios.get(`${API_URL}/api/players`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setPlayers(res.data);
@@ -72,7 +72,7 @@ const CreateTeam = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:5000/api/teams',
+        `${API_URL}/api/teams`,
         {
           match: matchId,
           players: selectedPlayers,
