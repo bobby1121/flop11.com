@@ -3,4 +3,4 @@ const API_URL = process.env.REACT_APP_API_URL ||
     ? 'https://flop11-backend.onrender.com'
     : 'http://localhost:5000');
 
-export default API_URL; 
+export { API_URL }; 
